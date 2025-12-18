@@ -32,3 +32,10 @@ fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UISt
     detailSiswa = this.toDetailSiswa(),
     isEntryValid = isEntryValid
 )
+
+fun DataSiswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
+    id = id,
+    nama = nama,
+    telepon = telepon,
+    alamat = alamat
+)
