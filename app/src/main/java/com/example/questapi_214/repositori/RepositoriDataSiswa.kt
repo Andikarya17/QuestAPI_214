@@ -1,5 +1,7 @@
 package com.example.questapi_214.repositori
 
-interface RepositoriDataSiswa{
+import com.example.questapi_214.modeldata.DataSiswa
 
+interface RepositoriDataSiswa{
+    suspend fun getDataSiswa() : List<DataSiswa>
 }
