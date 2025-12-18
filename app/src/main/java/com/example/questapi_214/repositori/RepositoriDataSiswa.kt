@@ -6,5 +6,9 @@ interface RepositoriDataSiswa{
     suspend fun getDataSiswa() : List<DataSiswa>
     suspend fun postDataSiswa(dataSiswa: DataSiswa) :retrofit2.Response<DataSiswa>
 
+    class JaringanRepositoriDataSiswa(
+
+    )
+
 }
 
