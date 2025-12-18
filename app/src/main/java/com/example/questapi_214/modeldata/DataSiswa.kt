@@ -27,3 +27,8 @@ fun DetailSiswa.toDataSiwa(): DataSiswa = DataSiswa(
     telepon = telepon,
     alamat = alamat
 )
+
+fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
+)
