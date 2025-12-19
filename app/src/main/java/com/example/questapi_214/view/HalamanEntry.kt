@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
+import com.example.questapi_214.modeldata.DetailSiswa
 import com.example.questapi_214.view.route.DestinasiEntry
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -48,4 +49,14 @@ fun EntrySiswaScreen(
                 .fillMaxWidth()
         )
     }
+}
+
+@Composable
+fun FormTambahSiswa(
+    detailSiswa: DetailSiswa,
+    modifier: Modifier = Modifier,
+    onValueChange: (DetailSiswa) -> Unit = {},
+    enabled: Boolean = true
+) {
+
 }
