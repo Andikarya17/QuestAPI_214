@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.questapi_214.modeldata.DetailSiswa
 import com.example.questapi_214.modeldata.UIStateSiswa
 import com.example.questapi_214.modeldata.toDataSiswa
-import com.example.questapi_214.repositori.RepositoriDataSiswa
+import com.example.questapi_214.repositori.RepositoryDataSiswa
 import retrofit2.Response
 
 class EntryViewModel (private val repositoryDataSiswa: RepositoryDataSiswa):

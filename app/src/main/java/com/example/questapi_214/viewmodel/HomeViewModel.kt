@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.questapi_214.modeldata.DataSiswa
-import com.example.questapi_214.repositori.RepositoriDataSiswa
+import com.example.questapi_214.repositori.RepositoryDataSiswa
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
