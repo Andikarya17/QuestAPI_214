@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.questapi_214.modeldata.DataSiswa
 import com.example.questapi_214.repositori.RepositoryDataSiswa
+import com.example.questapi_214.view.route.DestinasiDetail
 import kotlinx.coroutines.launch
 import java.io.IOException
 
