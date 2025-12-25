@@ -46,6 +46,9 @@ fun HalamanDetail(
                             navigateBack()
                         }
                     },
+                    modifier = modifier
+                        .padding(innerPadding)
+                        .verticalScroll(rememberScrollState())
             }
         }
 
