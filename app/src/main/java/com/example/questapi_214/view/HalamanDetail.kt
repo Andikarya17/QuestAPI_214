@@ -59,3 +59,10 @@ fun HalamanDetail(
                 )
         }
 }
+
+@Composable
+fun BodyDetail(
+    statusUiDetail: StatusUiDetail,
+    onDelete: () -> Unit,
+    modifier: Modifier = Modifier
+)
