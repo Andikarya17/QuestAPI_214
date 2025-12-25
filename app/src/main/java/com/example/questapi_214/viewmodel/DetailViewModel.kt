@@ -28,3 +28,15 @@ class DetailViewModel(
     init {
         getSiswaById()
     }
+    fun getSiswaById() {
+        viewModelScope.launch {
+            statusUiDetail = StatusUiDetail.Loading
+            statusUiDetail = try {
+                StatusUiDetail.Success(
+                    repositoryDataSiswa.getSiswa(idSiswa)
+                )
+            } catch (e: IOException) {
+                StatusUiDetail.Error
+            }
+        }
+    }
