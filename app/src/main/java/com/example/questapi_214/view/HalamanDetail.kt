@@ -1,5 +1,6 @@
 package com.example.questapi_214.view
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -72,5 +73,18 @@ fun BodyDetail(
     Column(
         modifier = modifier.padding(dimensionResource(R.dimen.padding_medium)),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
-    )
-}
+    ) {
+        when (statusUiDetail) {
+            is StatusUiDetail.Loading -> LoadingScreen()
+            is StatusUiDetail.Success -> {
+                DetailItem(
+                    siswa = statusUiDetail.siswa,
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+            is StatusUiDetail.Error -> {
+                Text(text = stringResource(R.string.gagal))
+            }
+        }
+
+    }
