@@ -128,3 +128,16 @@ fun DetailItem(
         }
     }
 }
+@Composable
+fun DetailRow(
+    labelRes: Int,
+    value: String,
+    modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier) {
+        Text(text = stringResource(labelRes))
+        Spacer(modifier = Modifier.weight(1f))
+        Text(text = value, fontWeight = FontWeight.Bold)
+    }
+}
+
