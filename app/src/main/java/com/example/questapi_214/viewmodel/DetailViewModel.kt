@@ -5,8 +5,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.questapi_214.modeldata.DataSiswa
 import com.example.questapi_214.repositori.RepositoryDataSiswa
+import kotlinx.coroutines.launch
+import java.io.IOException
 
 sealed interface StatusUiDetail {
     data class Success(val siswa: DataSiswa) : StatusUiDetail
@@ -40,3 +43,13 @@ class DetailViewModel(
             }
         }
     }
+    fun hapusSiswa() {
+        viewModelScope.launch {
+            try {
+                repositoryDataSiswa.hapusSiswa(idSiswa)
+            } catch (e: IOException) {
+                statusUiDetail = StatusUiDetail.Error
+            }
+        }
+    }
+}
