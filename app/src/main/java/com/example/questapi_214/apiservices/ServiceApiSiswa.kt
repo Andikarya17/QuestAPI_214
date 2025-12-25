@@ -22,7 +22,7 @@ interface ServiceApiSiswa {
     ): DataSiswa
 
     // INSERT
-    @POST("insertTM.php")
+    @POST("insert.php")
     suspend fun postSiswa(
         @Body dataSiswa: DataSiswa
     ): Response<Void>
