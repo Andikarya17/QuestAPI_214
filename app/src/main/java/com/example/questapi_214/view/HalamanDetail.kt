@@ -86,5 +86,12 @@ fun BodyDetail(
                 Text(text = stringResource(R.string.gagal))
             }
         }
+        OutlinedButton(
+            onClick = { deleteConfirmationRequired = true },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(R.string.delete))
+        }
+
 
     }
