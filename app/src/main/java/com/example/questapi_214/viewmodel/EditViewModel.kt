@@ -63,18 +63,13 @@ class EditViewModel(
         )
     }
 
-    fun editSiswa() {
-        viewModelScope.launch {
-            if (validasiInput()) {
-                try {
-                    repositoryDataSiswa.editSiswa(
-                        idSiswa,
-                        uiStateSiswa.detailSiswa.toDataSiswa()
-                    )
-                } catch (e: IOException) {
-                    // Error jaringan (sesuai modul tidak ditampilkan ke UI)
-                }
-            }
+    suspend fun editSiswa() {
+        if (validasiInput()) {
+            repositoryDataSiswa.editSiswa(
+                idSiswa,
+                uiStateSiswa.detailSiswa.toDataSiswa()
+            )
         }
     }
 }
+

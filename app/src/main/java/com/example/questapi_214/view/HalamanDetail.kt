@@ -41,18 +41,19 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanDetail(
-    navigateBack: () -> Unit,
+    navigateBackWithRefresh: () -> Unit,
     navigateToEdit: (String) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val coroutineScope = rememberCoroutineScope()
+
     Scaffold(
         topBar = {
             SiswaTopAppBar(
                 title = stringResource(R.string.detail_siswa),
                 canNavigateBack = true,
-                navigateUp = navigateBack
+                navigateUp = navigateBackWithRefresh
             )
         },
         floatingActionButton = {
@@ -65,22 +66,23 @@ fun HalamanDetail(
                 },
                 modifier = Modifier.padding(dimensionResource(R.dimen.padding_large))
             ) {
-                Text("Edit") }
+                Text(text = "Edit")
+            }
         }
-    ){ innerPadding ->
-                BodyDetail(
-                    statusUiDetail = viewModel.statusUiDetail,
-                    onDelete = {
-                        coroutineScope.launch {
-                            viewModel.hapusSiswa()
-                            navigateBack()
-                        }
-                    },
-                    modifier = modifier
-                        .padding(innerPadding)
-                        .verticalScroll(rememberScrollState())
-                )
-        }
+    ) { innerPadding ->
+        BodyDetail(
+            statusUiDetail = viewModel.statusUiDetail,
+            onDelete = {
+                coroutineScope.launch {
+                    viewModel.hapusSiswa()
+                    navigateBackWithRefresh()
+                }
+            },
+            modifier = modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState())
+        )
+    }
 }
 
 @Composable
@@ -107,12 +109,14 @@ fun BodyDetail(
                 Text(text = stringResource(R.string.gagal))
             }
         }
+
         OutlinedButton(
             onClick = { deleteConfirmationRequired = true },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(stringResource(R.string.delete))
         }
+
         if (deleteConfirmationRequired) {
             DeleteConfirmationDialog(
                 onDeleteConfirm = {
@@ -139,8 +143,7 @@ fun DetailItem(
         )
     ) {
         Column(
-            modifier = Modifier
-                .padding(dimensionResource(R.dimen.padding_medium)),
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             DetailRow(R.string.nama1, siswa.nama)
@@ -149,6 +152,7 @@ fun DetailItem(
         }
     }
 }
+
 @Composable
 fun DetailRow(
     labelRes: Int,
@@ -161,6 +165,7 @@ fun DetailRow(
         Text(text = value, fontWeight = FontWeight.Bold)
     }
 }
+
 @Composable
 fun DeleteConfirmationDialog(
     onDeleteConfirm: () -> Unit,

@@ -44,13 +44,8 @@ class DetailViewModel(
             }
         }
     }
-    fun hapusSiswa() {
-        viewModelScope.launch {
-            try {
-                repositoryDataSiswa.hapusSiswa(idSiswa)
-            } catch (e: IOException) {
-                statusUiDetail = StatusUiDetail.Error
-            }
-        }
-    }
-}
+    suspend fun hapusSiswa() {
+        repositoryDataSiswa.hapusSiswa(idSiswa)
+    }}
+
+

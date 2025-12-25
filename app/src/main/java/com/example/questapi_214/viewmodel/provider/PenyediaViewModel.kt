@@ -11,28 +11,37 @@ import com.example.questapi_214.viewmodel.EditViewModel
 import com.example.questapi_214.viewmodel.EntryViewModel
 import com.example.questapi_214.viewmodel.HomeViewModel
 
-fun CreationExtras.aplikasiDataSiswa() : AplikasiDataSiswa = (
-        this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as
-                AplikasiDataSiswa)
+fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa =
+    this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]
+            as AplikasiDataSiswa
+
 object PenyediaViewModel {
-    val Factory = viewModelFactory  {
+
+    val Factory = viewModelFactory {
+
         initializer {
-            HomeViewModel(aplikasiDataSiswa().container.repositoryDataSiswa)
+            HomeViewModel(
+                aplikasiDataSiswa().container.repositoryDataSiswa
+            )
         }
+
         initializer {
-            EntryViewModel(aplikasiDataSiswa().container.repositoryDataSiswa)
-        }
-        initializer {
-            DetailViewModel(
-                savedStateHandle = this.createSavedStateHandle(),
-                repositoryDataSiswa = aplikasiDataSiswa().container.repositoryDataSiswa
+            EntryViewModel(
+                aplikasiDataSiswa().container.repositoryDataSiswa
             )
         }
 
         initializer {
             EditViewModel(
-                savedStateHandle = this.createSavedStateHandle(),
-                repositoryDataSiswa = aplikasiDataSiswa().container.repositoryDataSiswa
+                this.createSavedStateHandle(),
+                aplikasiDataSiswa().container.repositoryDataSiswa
+            )
+        }
+
+        initializer {
+            DetailViewModel(
+                this.createSavedStateHandle(),
+                aplikasiDataSiswa().container.repositoryDataSiswa
             )
         }
     }
