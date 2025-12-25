@@ -68,4 +68,9 @@ fun BodyDetail(
     modifier: Modifier = Modifier
 ) {
     var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
+
+    Column(
+        modifier = modifier.padding(dimensionResource(R.dimen.padding_medium)),
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
+    )
 }
