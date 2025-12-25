@@ -25,5 +25,13 @@ fun HalamanDetail(
                 navigateUp = navigateBack
             )
         },
+        floatingActionButton = {
+            val uiState = viewModel.statusUiDetail
+            FloatingActionButton(
+                onClick = {
+                    if (uiState is StatusUiDetail.Success) {
+                        navigateToEdit(uiState.siswa.id)
+                    }
+                },
 
 }
