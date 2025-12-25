@@ -1,5 +1,10 @@
-1. tampilan data siswa di aplikasi
-   <img width="431" height="896" alt="image" src="https://github.com/user-attachments/assets/94376965-f589-46db-b76b-a1c33c50c3f0" />
-
-2. tampilan data siswa di phpmyadmin
-   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff3d1e33-ac9b-40fc-81b8-38beaf5d84a0" />
+<img width="1920" height="1080" alt="Screenshot (472)" src="https://github.com/user-attachments/assets/397edca2-e99b-4eb1-b972-f9398355a927" />
+<img width="1920" height="1080" alt="Screenshot (493)" src="https://github.com/user-attachments/assets/5a95d8e1-bfb6-4829-9f50-5a999751cca9" />
+<img width="1920" height="1080" alt="Screenshot (505)" src="https://github.com/user-attachments/assets/ba2f1d78-f4ec-409c-b319-f687ebef78b4" />
+<img width="1920" height="1080" alt="Screenshot (506)" src="https://github.com/user-attachments/assets/561af6aa-beef-46ca-9ff6-8f35a55c95b8" />
+<img width="1920" height="1080" alt="Screenshot (507)" src="https://github.com/user-attachments/assets/b2ca7076-0ae4-402c-a4b9-3b2c89d323d2" />
+<img width="1920" height="1080" alt="Screenshot (508)" src="https://github.com/user-attachments/assets/ef1f44ab-b33d-492f-8b52-fafd316ea0e2" />
+<img width="1920" height="1080" alt="Screenshot (509)" src="https://github.com/user-attachments/assets/6e5d1954-7168-4649-921a-26dcb71a72af" />
+<img width="1920" height="1080" alt="Screenshot (519)" src="https://github.com/user-attachments/assets/89379c8b-7ca9-4bf0-9fe4-456c38f9bbe8" />
+<img width="1920" height="1080" alt="Screenshot (520)" src="https://github.com/user-attachments/assets/4519b503-1252-45c3-9a5f-f7889c3e2ac2" />
+<img width="1920" height="1080" alt="Screenshot (521)" src="https://github.com/user-attachments/assets/61be9a10-79f6-4695-86e1-713fa700b7f2" />
