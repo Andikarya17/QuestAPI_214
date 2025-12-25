@@ -28,14 +28,14 @@ interface ServiceApiSiswa {
     ): Response<Void>
 
     // UPDATE
-    @PUT("editTM.php")
+    @PUT("edit.php")
     suspend fun editSiswa(
         @Query("id") id: Int,
         @Body dataSiswa: DataSiswa
     ): Response<Void>
 
     // DELETE
-    @DELETE("deleteTM.php")
+    @DELETE("delete.php")
     suspend fun hapusSiswa(
         @Query("id") id: Int
     ): Response<Void>
