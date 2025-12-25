@@ -28,17 +28,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.questapi_214.viewmodel.provider.PenyediaViewModel
 import com.example.questapi_214.R
 import com.example.questapi_214.modeldata.DataSiswa
+import com.example.questapi_214.viewmodel.DetailViewModel
+import com.example.questapi_214.viewmodel.StatusUiDetail
 import kotlinx.coroutines.launch
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanDetail(
     navigateBack: () -> Unit,
-    navigateToEdit: (Int) -> Unit,
+    navigateToEdit: (String) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
