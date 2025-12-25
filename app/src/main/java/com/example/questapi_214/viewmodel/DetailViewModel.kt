@@ -37,7 +37,7 @@ class DetailViewModel(
             statusUiDetail = StatusUiDetail.Loading
             statusUiDetail = try {
                 StatusUiDetail.Success(
-                    repositoryDataSiswa.getSiswa(idSiswa)
+                    repositoryDataSiswa.getSiswaById(idSiswa)
                 )
             } catch (e: IOException) {
                 StatusUiDetail.Error
