@@ -33,5 +33,11 @@ fun HalamanDetail(
                         navigateToEdit(uiState.siswa.id)
                     }
                 },
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_large))
+            ) {
+                Text("Edit")
+            }
+        }
+
 
 }
