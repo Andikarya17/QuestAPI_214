@@ -2,6 +2,7 @@ package com.example.questapi_214.view
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -36,6 +37,15 @@ fun HalamanDetail(
                 modifier = Modifier.padding(dimensionResource(R.dimen.padding_large))
             ) {
                 Text("Edit")
+    ){ innerPadding ->
+                BodyDetail(
+                    statusUiDetail = viewModel.statusUiDetail,
+                    onDelete = {
+                        coroutineScope.launch {
+                            viewModel.hapusSiswa()
+                            navigateBack()
+                        }
+                    },
             }
         }
 
