@@ -105,3 +105,9 @@ fun BodyDetail(
         }
     }
 }
+
+@Composable
+fun DetailItem(
+    siswa: DataSiswa,
+    modifier: Modifier = Modifier
+)
