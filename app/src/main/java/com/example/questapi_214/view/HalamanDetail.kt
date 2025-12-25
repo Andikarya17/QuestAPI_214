@@ -110,4 +110,21 @@ fun BodyDetail(
 fun DetailItem(
     siswa: DataSiswa,
     modifier: Modifier = Modifier
-)
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(dimensionResource(R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            DetailRow(R.string.nama1, siswa.nama)
+            DetailRow(R.string.alamat1, siswa.alamat)
+            DetailRow(R.string.telpon1, siswa.telpon)
+        }
+    }
+}
