@@ -2,6 +2,7 @@ package com.example.questapi_214.view
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Scaffold
@@ -65,4 +66,6 @@ fun BodyDetail(
     statusUiDetail: StatusUiDetail,
     onDelete: () -> Unit,
     modifier: Modifier = Modifier
-)
+) {
+    var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
+}
